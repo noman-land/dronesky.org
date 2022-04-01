@@ -1,6 +1,6 @@
 @media (prefers-reduced-motion: no-preference) {
   .spin {
-    animation: spin infinite 20s linear;
+    animation: spin infinite 5s linear;
   }
 }
 
@@ -15,8 +15,42 @@
   color: white;
 }
 
-h1 {
-  font-size: 3rem;
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.record {
+  background: black;
+  border-radius: 50%;
+  height: 640px;
+  width: 640px;
+}
+
+.label {
+  background: white;
+  border-radius: 50%;
+  flex-direction: column;
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+.text {
+  position: absolute;
+  top: 40px;
+  color: black;
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.hole {
+  background: #282c34;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
 }
 
 @keyframes spin {
