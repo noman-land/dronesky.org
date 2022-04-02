@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import './App.css';
 
-import { Record } from './Record';
+import { Record } from './turntable/Record';
 
 const StyledApp = styled('div')`
   background-color: #282c34;
