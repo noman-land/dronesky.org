@@ -17,7 +17,9 @@ const PlatterInside = styled('div')`
   width: 560px;
 `
 export const Platter = ({ children, isPlaying }) => (
-  <PlatterOutside className={classNames('flex-center', { 'spin': isPlaying })}>
+  <PlatterOutside
+    className={classNames('flex-center', { spin: isPlaying })}
+  >
     <PlatterInside className='flex-center'>
       {children}
     </PlatterInside>
