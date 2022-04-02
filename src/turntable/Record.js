@@ -3,14 +3,13 @@ import styled from 'styled-components';
 const RecordDiv = styled('div')`
   background: #161617;
   border-radius: 50%;
-  height: 600px;
-  width: 600px;
+  height: 546px;
+  width: 546px;
 `
 
 const LabelDiv = styled('div')`
   background: white;
   border-radius: 50%;
-  flex-direction: column;
   height: 200px;
   position: relative;
   width: 200px;
@@ -33,7 +32,7 @@ const HoleDiv = styled('div')`
 `
 
 export const Record = () => (
-  <RecordDiv className='flex-center spin'>
+  <RecordDiv className='flex-center'>
     <LabelDiv className='flex-center'>
       <TextDiv>Drone Sky</TextDiv>
       <HoleDiv />

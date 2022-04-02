@@ -2,22 +2,20 @@ import styled from 'styled-components';
 
 import './App.css';
 
-import { Record } from './turntable/Record';
+import { Turntable } from './turntable/Turntable';
 
 const StyledApp = styled('div')`
+  align-items: center;
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
+  justify-content: center;
+  min-height: 100vh;
 `
 
 export const App = () => (
   <StyledApp>
-    <Record />
+    <Turntable />
   </StyledApp>
 );
-
-export default App;
