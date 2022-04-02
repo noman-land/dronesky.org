@@ -1,18 +1,23 @@
+import styled from 'styled-components';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className='record flex-center spin'>
-        <div className='label flex-center'>
-          <span className="text">Drone Sky</span>
-          <span className="hole" />
-        </div>
-        </div>
-      </header>
-    </div>
-  );
-}
+import { Record } from './Record';
+
+const StyledApp = styled('div')`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+`
+
+export const App = () => (
+  <StyledApp>
+    <Record />
+  </StyledApp>
+);
 
 export default App;

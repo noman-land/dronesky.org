@@ -1,0 +1,30 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin {
+    animation: spin infinite 5s linear;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .flip {
+    animation: flip 1 1s linear;
+    animation-fill-mode: forwards;
+  }
+}
