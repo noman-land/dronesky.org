@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import styled from 'styled-components';
 
 const PlatterOutside = styled('div')`
@@ -15,8 +16,8 @@ const PlatterInside = styled('div')`
   height: 560px;
   width: 560px;
 `
-export const Platter = ({ children }) => (
-  <PlatterOutside className='flex-center spin'>
+export const Platter = ({ children, isPlaying }) => (
+  <PlatterOutside className={classNames('flex-center', { 'spin': isPlaying })}>
     <PlatterInside className='flex-center'>
       {children}
     </PlatterInside>
