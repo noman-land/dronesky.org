@@ -16,6 +16,7 @@ const PlatterInside = styled('div')`
   height: 560px;
   width: 560px;
 `
+
 export const Platter = ({ children, isPlaying }) => (
   <PlatterOutside
     className={classNames('flex-center', { spin: isPlaying })}
