@@ -10,9 +10,16 @@ const PlatterOutside = styled('div')`
   width: 619px;
 `
 
-const PlatterInside = styled('div')`
+const PlatterMiddle = styled('div')`
+  background-color: #444;
   border-radius: 50%;
-  background-color: #eee;
+  height: 611px;
+  width: 611px;
+`;
+
+const PlatterInside = styled('div')`
+  background-color: #999;
+  border-radius: 50%;
   height: 560px;
   width: 560px;
 `
@@ -21,8 +28,10 @@ export const Platter = ({ children, isPlaying }) => (
   <PlatterOutside
     className={classNames('flex-center', 'spin', { paused: !isPlaying })}
   >
-    <PlatterInside className='flex-center'>
-      {children}
-    </PlatterInside>
+    <PlatterMiddle className='flex-center'>
+      <PlatterInside className='flex-center'>
+        {children}
+      </PlatterInside>
+    </PlatterMiddle>
   </PlatterOutside>
 );
