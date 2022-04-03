@@ -16,15 +16,27 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .spin {
-    animation: spin infinite 5s linear;
+@keyframes unflip {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .spin {
+    animation: spin infinite 5s linear;
+  }
+
   .flip {
     animation: flip 1 1s linear;
+    animation-fill-mode: forwards;
+  }
+  
+  .unflip {
+    animation: unflip 1 1s linear;
     animation-fill-mode: forwards;
   }
 }

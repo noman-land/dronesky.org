@@ -1,8 +1,15 @@
+import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
 import './App.css';
 
 import { Turntable } from './turntable/Turntable';
+
+const NextButton = styled('button')`
+  margin-bottom: 16px;
+  padding: 8px;
+  font-size: 20px;
+`;
 
 const StyledApp = styled('div')`
   align-items: center;
@@ -14,8 +21,16 @@ const StyledApp = styled('div')`
   min-height: 100vh;
 `
 
-export const App = () => (
-  <StyledApp>
-    <Turntable />
-  </StyledApp>
-);
+export const App = () => {
+  const [isFlipped, setIsFlipped] = useState();
+  const toggleIsFlipped = useCallback(() => {
+    setIsFlipped(flipped => !flipped);
+  }, [setIsFlipped])
+
+  return(
+    <StyledApp>
+      <NextButton onClick={toggleIsFlipped}>Next</NextButton>
+      <Turntable isFlipped={isFlipped} />
+    </StyledApp>
+  );
+}

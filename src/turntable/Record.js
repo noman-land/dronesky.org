@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 const RecordDiv = styled('div')`
@@ -15,11 +17,20 @@ const LabelDiv = styled('div')`
   width: 200px;
 `
 
-const TextDiv = styled('div')`
+const TopText = styled('div')`
   position: absolute;
   top: 40px;
   color: black;
   font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+`
+
+const BottomText = styled('div')`
+  position: absolute;
+  bottom: 40px;
+  color: black;
+  font-size: 1.5rem;
   font-weight: 200;
   text-align: center;
 `
@@ -31,11 +42,37 @@ const HoleDiv = styled('div')`
   width: 12px;
 `
 
-export const Record = () => (
-  <RecordDiv className='flex-center'>
-    <LabelDiv className='flex-center'>
-      <TextDiv>Drone Sky</TextDiv>
-      <HoleDiv />
-    </LabelDiv>
-  </RecordDiv>
-);
+export const Record = ({ isFlipped }) => {
+  const [trackNum, setTrackNum] = useState(1);
+  const [textFlippedDelayed, setTextFlippedDelayed] = useState(isFlipped);
+  const classes = useMemo(() => ({ 
+    flip: isFlipped === true,
+    unflip: isFlipped === false,
+  }), [isFlipped]);
+
+  useEffect(() => {
+    if (isFlipped !== undefined) {
+      setTimeout(() => {
+        setTextFlippedDelayed(flipped => !flipped);
+        setTrackNum(n => n + 1)
+      },
+        // Half the time it takes to flip (1000ms)
+        500
+      )
+    }
+  }, [isFlipped])
+
+  return (
+    <RecordDiv className={classNames('flex-center', classes)}>
+      <LabelDiv className='flex-center'>
+        <TopText className={classNames(classes)}>
+          Drone Sky
+        </TopText>
+        <HoleDiv />
+        <BottomText className={classNames(classes)}>
+          Side {trackNum}
+        </BottomText>
+      </LabelDiv>
+    </RecordDiv>
+  );
+}
