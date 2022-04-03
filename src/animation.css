@@ -28,3 +28,7 @@
     animation-fill-mode: forwards;
   }
 }
+
+.paused {
+  animation-play-state: paused;
+}

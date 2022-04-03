@@ -19,7 +19,7 @@ const PlatterInside = styled('div')`
 
 export const Platter = ({ children, isPlaying }) => (
   <PlatterOutside
-    className={classNames('flex-center', { spin: isPlaying })}
+    className={classNames('flex-center', 'spin', { paused: !isPlaying })}
   >
     <PlatterInside className='flex-center'>
       {children}
