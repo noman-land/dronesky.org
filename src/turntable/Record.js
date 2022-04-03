@@ -44,16 +44,14 @@ const HoleDiv = styled('div')`
 
 export const Record = ({ isFlipped }) => {
   const [trackNum, setTrackNum] = useState(1);
-  const [textFlippedDelayed, setTextFlippedDelayed] = useState(isFlipped);
-  const classes = useMemo(() => ({ 
+  const classes = {
     flip: isFlipped === true,
     unflip: isFlipped === false,
-  }), [isFlipped]);
+  };
 
   useEffect(() => {
     if (isFlipped !== undefined) {
       setTimeout(() => {
-        setTextFlippedDelayed(flipped => !flipped);
         setTrackNum(n => n + 1)
       },
         // Half the time it takes to flip (1000ms)
