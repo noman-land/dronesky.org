@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const PlatterOutside = styled('div')`
   background-color: #999;
   border-radius: 50%;
-  height: 617px;
-  left: 19px;
-  top: 10px;
-  width: 617px;  
+  height: 619px;
+  left: 18px;
+  top: 9px;
+  width: 619px;
 `
 
 const PlatterInside = styled('div')`
