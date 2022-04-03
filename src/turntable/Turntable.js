@@ -20,11 +20,24 @@ export const Turntable = ({ isFlipped }) => {
   const toggleIsPlaying = useCallback(() => {
     setIsPlaying(playing => !playing);
   }, [setIsPlaying])
+
+  const startRecord = useCallback(() => {
+    setIsPlaying(true)
+  }, [])
+
+  const stopRecord = useCallback(() => {
+    setIsPlaying(false)
+  }, [])
+
   return (
     <StyledTurntable>
       <PlatterHole>
         <Platter isPlaying={isPlaying}>
-          <Record isFlipped={isFlipped}/>
+          <Record
+            isFlipped={isFlipped}
+            onRelease={startRecord}
+            onTouch={stopRecord}
+          />
         </Platter>
       </PlatterHole>
       <StartStopButton onClick={toggleIsPlaying}/>

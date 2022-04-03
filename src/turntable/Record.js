@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const RecordDiv = styled('div')`
@@ -42,7 +42,7 @@ const HoleDiv = styled('div')`
   width: 12px;
 `
 
-export const Record = ({ isFlipped }) => {
+export const Record = ({ isFlipped, onTouch, onRelease }) => {
   const [trackNum, setTrackNum] = useState(1);
   const classes = {
     flip: isFlipped === true,
@@ -61,7 +61,11 @@ export const Record = ({ isFlipped }) => {
   }, [isFlipped])
 
   return (
-    <RecordDiv className={classNames('flex-center', classes)}>
+    <RecordDiv
+      className={classNames('flex-center', classes)}
+      onMouseDown={onTouch}
+      onMouseUp={onRelease}
+    >
       <LabelDiv className='flex-center'>
         <TopText className={classNames(classes)}>
           Drone Sky
