@@ -8,7 +8,7 @@ import { StartStopButton } from './StartStopButton';
 
 const StyledTurntable = styled('div')`
   background-color: #d1d1d6;
-  background-image: url('turntable.jpg');
+  /* background-image: url('turntable.jpg'); */
   background-size: cover;
   height: 648px;
   position: relative;
