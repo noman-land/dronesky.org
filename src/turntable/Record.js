@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const RecordDiv = styled('div')`
