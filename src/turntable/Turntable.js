@@ -29,5 +29,5 @@ export const Turntable = () => {
       </PlatterHole>
       <StartStopButton onClick={toggleIsPlaying}/>
     </StyledTurntable>
-);
+  );
 }
