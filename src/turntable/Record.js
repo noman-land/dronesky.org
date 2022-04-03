@@ -42,7 +42,11 @@ const HoleDiv = styled('div')`
   width: 12px;
 `
 
-export const Record = ({ isFlipped, onTouch, onRelease }) => {
+export const Record = ({
+  isFlipped,
+  onTouch,
+  onRelease,
+}) => {
   const [trackNum, setTrackNum] = useState(1);
   const classes = {
     flip: isFlipped === true,

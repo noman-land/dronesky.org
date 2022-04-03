@@ -17,26 +17,30 @@ const StyledTurntable = styled('div')`
 
 export const Turntable = ({ isFlipped }) => {
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isHolding, setIsHolding] = useState(false);
   const toggleIsPlaying = useCallback(() => {
     setIsPlaying(playing => !playing);
   }, [setIsPlaying])
 
-  const startRecord = useCallback(() => {
-    setIsPlaying(true)
+  const startHolding = useCallback(() => {
+    setIsHolding(true)
   }, [])
 
-  const stopRecord = useCallback(() => {
-    setIsPlaying(false)
+  const stopHolding = useCallback(() => {
+    setIsHolding(false)
   }, [])
 
   return (
     <StyledTurntable>
       <PlatterHole>
-        <Platter isPlaying={isPlaying}>
+        <Platter
+          isHolding={isHolding}
+          isPlaying={isPlaying}
+        >
           <Record
             isFlipped={isFlipped}
-            onRelease={startRecord}
-            onTouch={stopRecord}
+            onRelease={stopHolding}
+            onTouch={startHolding}
           />
         </Platter>
       </PlatterHole>
