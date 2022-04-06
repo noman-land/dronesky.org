@@ -17,7 +17,7 @@ export async function onRequest(context) {
     ),
     {
       headers: {
-        ContentType: 'application/json',
+        'Content-Type': 'application/json',
       },
     }
   );
