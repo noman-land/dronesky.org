@@ -9,7 +9,9 @@ export async function onRequest(context) {
     data, // arbitrary space for passing data between middlewares
   } = context;
 
-  return new Response({
-    songId: params.id,
-  });
+  return new Response(
+    JSON.stringify({
+      songId: params.id,
+    })
+  );
 }
