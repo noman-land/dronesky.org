@@ -11,7 +11,7 @@ export async function onRequest(context) {
 
   return new Response(
     JSON.stringify(
-      { songId: params.id },
+      { songId: parseInt(params.id, 10) },
       null,
       2
     ),
