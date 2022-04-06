@@ -9,14 +9,16 @@ export async function onRequest(context) {
     data, // arbitrary space for passing data between middlewares
   } = context;
 
-  return new Response({
-    data: JSON.stringify(
+  return new Response(
+    JSON.stringify(
       { songs: [] },
       null,
       2
     ),
-    headers: {
-      ContentType: 'application/json',
-    },
-  });
+    {
+      headers: {
+        ContentType: 'application/json',
+      },
+    }
+  );
 }
