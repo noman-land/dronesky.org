@@ -55,9 +55,8 @@ export const Record = ({
 
   useEffect(() => {
     if (isFlipped !== undefined) {
-      setTimeout(() => {
-        setTrackNum(n => n + 1)
-      },
+      setTimeout(
+        () => setTrackNum(n => n + 1),
         // Half the time it takes to flip (1000ms)
         500
       )

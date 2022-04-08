@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-const ButtonHousing = styled('div')`
-  align-items: center;
-  background-color: #161617;
-  border-radius: 4px;
-  bottom: 19px;
-  display: flex;
-  height: 64px;
-  justify-content: center;
-  left: 20px;
-  position: absolute;
-  width: 80px;
-  `
 const Button = styled('button')`
   align-items: center;
   background-color: #eee;
@@ -37,11 +25,9 @@ const Button = styled('button')`
 `
 
 export const StartStopButton = ({ onClick }) => (
-  <ButtonHousing>
-    <Button onClick={onClick}>
-      <span className="text">
-        Start•Stop
-      </span>
-    </Button>
-  </ButtonHousing>
+  <Button onClick={onClick}>
+    <span className="text">
+      Start•Stop
+    </span>
+  </Button>
 );
