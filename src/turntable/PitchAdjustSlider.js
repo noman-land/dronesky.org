@@ -19,9 +19,7 @@ const Slider = styled.div.attrs(({ clientY }) => ({
   style: { bottom: clip(clientY) },
 }))`
   align-items: stretch;
-  background-color: ${({ isDragging }) => 
-    isDragging ? 'green' : '#999'
-  };
+  background-color: #AAA;
   border-radius: 2px;
   border: solid grey 2px;
   display: flex;
