@@ -7,6 +7,36 @@ const RecordDiv = styled('div')`
   border-radius: 50%;
   height: 546px;
   width: 546px;
+
+  @keyframes flip {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(180deg);
+    }
+  }
+
+  @keyframes unflip {
+    from {
+      transform: rotateY(180deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+
+  &.flip,
+  .flip {
+    animation: flip 1 1s linear;
+    animation-fill-mode: forwards;
+  }
+
+  &.unflip,
+  .unflip {
+    animation: unflip 1 1s linear;
+    animation-fill-mode: forwards;
+  }
 `
 
 const LabelDiv = styled('div')`

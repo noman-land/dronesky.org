@@ -9,6 +9,23 @@ const PlatterHole = styled('div')`
   position: absolute;
   top: 10px;
   width: 625px;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spin {
+    animation: spin infinite 5s linear;
+  }
+
+  .paused {
+    animation-play-state: paused;
+  }
 `
 
 const PlatterOutside = styled('div')`
