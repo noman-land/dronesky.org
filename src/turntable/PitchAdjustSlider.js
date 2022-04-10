@@ -33,6 +33,7 @@ export const PitchAdjustSlider = ({ onChange, value }) => (
         background: '#ABABAB',
         border: 'solid 2px #161617',
         borderRadius: 3,
+        boxShadow: 'none',
         height: 30,
         left: -8,
         opacity: 1,
