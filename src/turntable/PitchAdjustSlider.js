@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const PitchAdjustHole = styled('div')`
   background-color: #d1d1d6;
-  border-radius: 4px;
   border: solid black 2px;
+  border-radius: 4px;
   bottom: 78px;
   display: flex;
   height: 224px;
@@ -25,23 +25,26 @@ const PitchAdjustHole = styled('div')`
   }
 `;
 
+const handleStyle = {
+  background: '#ABABAB',
+  border: 'solid 2px #161617',
+  borderRadius: 3,
+  boxShadow: 'none',
+  height: 30,
+  left: -8,
+  opacity: 1,
+  width: 40,
+};
+
+const displayNone = { display: 'none' };
 
 export const PitchAdjustSlider = ({ onChange, value }) => (
   <PitchAdjustHole>
     <Slider
-      handleStyle={{
-        background: '#ABABAB',
-        border: 'solid 2px #161617',
-        borderRadius: 3,
-        boxShadow: 'none',
-        height: 30,
-        left: -8,
-        opacity: 1,
-        width: 40,
-      }}
+      handleStyle={handleStyle}
       onChange={onChange}
-      railStyle={{ display: 'none' }}
-      trackStyle={{ display: 'none' }}
+      railStyle={displayNone}
+      trackStyle={displayNone}
       value={value}
       vertical={true}
     />
