@@ -10,14 +10,10 @@ export async function onRequestGet(context) {
   } = context;
 
   return new Response(
-    JSON.stringify(
-      { songs: [] },
-      null,
-      2
-    ),
+    JSON.stringify({ songs: [] }),
     {
       headers: {
-        'Content-Type': 'application/json',
+        'content-type': 'application/json',
       },
     }
   );

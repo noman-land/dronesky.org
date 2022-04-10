@@ -10,14 +10,10 @@ export async function onRequestGet(context) {
   } = context;
 
   return new Response(
-    JSON.stringify(
-      { songId: parseInt(params.id, 10) },
-      null,
-      2
-    ),
+    JSON.stringify({ songId: parseInt(params.id, 10) }),
     {
       headers: {
-        'Content-Type': 'application/json',
+        'content-type': 'application/json',
       },
     }
   );
