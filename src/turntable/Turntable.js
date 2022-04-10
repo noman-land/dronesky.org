@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react';
-import Slider from 'rc-slider';
 import styled from 'styled-components';
 
 import 'rc-slider/assets/index.css';
@@ -7,6 +6,7 @@ import 'rc-slider/assets/index.css';
 import { Platter } from './Platter';
 import { PlatterHole } from './PlatterHole';
 import { Record } from './Record';
+import { PitchAdjustSlider } from './PitchAdjustSlider';
 import { StartStopButton } from './StartStopButton';
 
 const ButtonHole = styled('div')`
@@ -89,22 +89,7 @@ export const Turntable = ({ isFlipped }) => {
         </Platter>
       </PlatterHole>
       <PitchAdjustHole>
-        <Slider
-          handleStyle={{
-            background: '#ABABAB',
-            border: 'solid 2px #161617',
-            borderRadius: 3,
-            height: 30,
-            left: -12,
-            opacity: 1,
-            width: 48,
-          }}
-          onChange={setPitch}
-          railStyle={{ display: 'none' }}
-          trackStyle={{ display: 'none' }}
-          value={pitch}
-          vertical={true}
-        />
+        <PitchAdjustSlider onChange={setPitch} value={pitch} />
       </PitchAdjustHole>
     </StyledTurntable>
   );

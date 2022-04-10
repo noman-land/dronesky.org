@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
+import 'rc-slider/assets/index.css';
 import './App.css';
 
 import { Turntable } from './turntable/Turntable';
