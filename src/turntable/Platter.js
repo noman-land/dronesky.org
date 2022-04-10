@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import styled from 'styled-components';
 
+import { PlatterHole } from './PlatterHole';
+
 const PlatterOutside = styled('div')`
   background-color: #999;
   border-radius: 50%;
@@ -29,15 +31,17 @@ export const Platter = ({
   isHolding,
   isPlaying,
 }) => (
-  <PlatterOutside className={
-    classNames('flex-center', 'spin', {
-      paused: !isPlaying || isHolding,
-    })
-  }>
-    <PlatterMiddle className='flex-center'>
-      <PlatterInside className='flex-center'>
-        {children}
-      </PlatterInside>
-    </PlatterMiddle>
-  </PlatterOutside>
+  <PlatterHole>
+    <PlatterOutside className={
+      classNames('flex-center', 'spin', {
+        paused: !isPlaying || isHolding,
+      })
+    }>
+      <PlatterMiddle className='flex-center'>
+        <PlatterInside className='flex-center'>
+          {children}
+        </PlatterInside>
+      </PlatterMiddle>
+    </PlatterOutside>
+  </PlatterHole>
 );
