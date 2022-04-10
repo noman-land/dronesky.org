@@ -6,17 +6,17 @@ const clip = n => {
   const value = OFFSET - n;
   const max = 184;
   const min = -4;
-  if (value <= min) {
+  if (value < min) {
     return min;
   }
-  if (value >= max) {
+  if (value > max) {
     return max;
   }
   return value;
 }
 
-const Slider = styled.div.attrs(({ clientY }) => ({
-  style: { bottom: clip(clientY) },
+const Slider = styled.div.attrs(({ screenY }) => ({
+  style: { bottom: 92 },
 }))`
   align-items: stretch;
   background-color: #AAA;
@@ -35,9 +35,9 @@ const HR = styled('hr')`
   width: 100%;
 `;
 
-export const PitchAdjustSlider = ({ clientY }) => (
+export const PitchAdjustSlider = ({ screenY }) => (
   <Slider
-    clientY={clientY}
+    screenY={screenY}
     draggable={true}
   >
     <HR />

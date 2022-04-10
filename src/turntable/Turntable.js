@@ -54,7 +54,7 @@ const PitchAdjustHole = styled('div')`
 `;
 
 export const Turntable = ({ isFlipped }) => {
-  const [clientY, setClientY] = useState(290);
+  const [screenY, setScreenY] = useState(290);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHolding, setIsHolding] = useState(false);
   const toggleIsPlaying = useCallback(() => {
@@ -69,8 +69,9 @@ export const Turntable = ({ isFlipped }) => {
     setIsHolding(false)
   }, [])
 
-  const callback = useCallback(({ clientY }) => {
-    setClientY(clientY);
+  const callback = useCallback((event) => {
+    console.log(event)
+    setScreenY(event.screenY);
   }, []);
 
   return (
@@ -93,7 +94,7 @@ export const Turntable = ({ isFlipped }) => {
       <PitchAdjustHole 
         onDragOver={callback}
       >
-        <PitchAdjustSlider clientY={clientY}/>
+        <PitchAdjustSlider screenY={screenY}/>
       </PitchAdjustHole>
     </StyledTurntable>
   );
