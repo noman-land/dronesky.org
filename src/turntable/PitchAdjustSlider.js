@@ -34,9 +34,9 @@ export const PitchAdjustSlider = ({ onChange, value }) => (
         border: 'solid 2px #161617',
         borderRadius: 3,
         height: 30,
-        left: -12,
+        left: -8,
         opacity: 1,
-        width: 48,
+        width: 40,
       }}
       onChange={onChange}
       railStyle={{ display: 'none' }}
