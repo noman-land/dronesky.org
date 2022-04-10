@@ -1,7 +1,9 @@
 import { useCallback, useState } from 'react';
+import Slider from 'rc-slider';
 import styled from 'styled-components';
 
-import { PitchAdjustSlider } from './PitchAdjustSlider';
+import 'rc-slider/assets/index.css';
+
 import { Platter } from './Platter';
 import { PlatterHole } from './PlatterHole';
 import { Record } from './Record';
@@ -54,7 +56,7 @@ const PitchAdjustHole = styled('div')`
 `;
 
 export const Turntable = ({ isFlipped }) => {
-  const [screenY, setScreenY] = useState(290);
+  const [pitch, setPitch] = useState(50);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHolding, setIsHolding] = useState(false);
   const toggleIsPlaying = useCallback(() => {
@@ -68,11 +70,6 @@ export const Turntable = ({ isFlipped }) => {
   const stopHolding = useCallback(() => {
     setIsHolding(false)
   }, [])
-
-  const callback = useCallback((event) => {
-    console.log(event)
-    setScreenY(event.screenY);
-  }, []);
 
   return (
     <StyledTurntable>
@@ -91,10 +88,23 @@ export const Turntable = ({ isFlipped }) => {
           />
         </Platter>
       </PlatterHole>
-      <PitchAdjustHole 
-        onDragOver={callback}
-      >
-        <PitchAdjustSlider screenY={screenY}/>
+      <PitchAdjustHole>
+        <Slider
+          handleStyle={{
+            background: '#ABABAB',
+            border: 'solid 2px #161617',
+            borderRadius: 3,
+            height: 30,
+            left: -12,
+            opacity: 1,
+            width: 48,
+          }}
+          onChange={setPitch}
+          railStyle={{ display: 'none' }}
+          trackStyle={{ display: 'none' }}
+          value={pitch}
+          vertical={true}
+        />
       </PitchAdjustHole>
     </StyledTurntable>
   );
