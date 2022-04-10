@@ -1,7 +1,15 @@
 import classNames from 'classnames';
 import styled from 'styled-components';
 
-import { PlatterHole } from './PlatterHole';
+const PlatterHole = styled('div')`
+  background-color: #111;
+  border-radius: 50%;
+  height: 625px;
+  left: 19px;
+  position: absolute;
+  top: 10px;
+  width: 625px;
+`
 
 const PlatterOutside = styled('div')`
   background-color: #999;
