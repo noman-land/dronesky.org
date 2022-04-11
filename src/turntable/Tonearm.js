@@ -33,7 +33,7 @@ const TonearmContainer = styled.div`
 
 const TonearmRod = styled('div')`
   background: silver;
-  border: 2px solid #aaa;
+  border: 2px solid #777;
   border-bottom-style: none;
   border-radius: 4px 4px 0px 0px;
   height: 480px;
