@@ -1,1 +1,5 @@
 @import "./util.css";
+
+* {
+  box-sizing: border-box;
+}

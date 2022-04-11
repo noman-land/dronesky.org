@@ -9,6 +9,7 @@ const PlatterHole = styled('div')`
   position: absolute;
   top: 10px;
   width: 625px;
+  z-index: 1;
 
   @keyframes spin {
     from {

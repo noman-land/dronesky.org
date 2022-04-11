@@ -7,6 +7,7 @@ import { PitchAdjustSlider } from './PitchAdjustSlider';
 import { Platter } from './Platter';
 import { Record } from './Record';
 import { StartStopButton } from './StartStopButton';
+import { Tonearm } from './Tonearm';
 
 const StyledTurntable = styled('div')`
   background-color: #d1d1d6;
@@ -46,6 +47,7 @@ export const Turntable = ({ isFlipped }) => {
           onTouch={startHolding}
         />
       </Platter>
+      <Tonearm />
       <PitchAdjustSlider onChange={setPitch} value={pitch} />
     </StyledTurntable>
   );
