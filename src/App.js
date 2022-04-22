@@ -20,18 +20,18 @@ const StyledApp = styled('div')`
   font-size: calc(10px + 2vmin);
   justify-content: center;
   min-height: 100vh;
-`
+`;
 
 export const App = () => {
   const [isFlipped, setIsFlipped] = useState();
   const toggleIsFlipped = useCallback(() => {
     setIsFlipped(flipped => !flipped);
-  }, [setIsFlipped])
+  }, [setIsFlipped]);
 
-  return(
+  return (
     <StyledApp>
       <NextButton onClick={toggleIsFlipped}>Next</NextButton>
       <Turntable isFlipped={isFlipped} />
     </StyledApp>
   );
-}
+};

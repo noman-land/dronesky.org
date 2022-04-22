@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
 import styled from 'styled-components';
+import { useCallback, useState } from 'react';
 
 const TonearmPad = styled('div')`
   align-items: center;
@@ -25,7 +25,7 @@ const TonearmContainer = styled.div`
   overflow: visible;
   position: absolute;
   right: 28px;
-  transform: rotateZ(35deg);
+  transform: rotateZ(0deg);
   top: 53px;
   width: 223px;
   z-index: 1;
@@ -76,16 +76,13 @@ const CounterweightDial = styled('div')`
   }
 `;
 
-
-export const Tonearm = () => {
-  return (
-    <>
-      <TonearmPad />
-      <TonearmContainer>
-        <TonearmRod />
-        <Counterweight />
-        <CounterweightDial />
-      </TonearmContainer>
-    </>
-  );
-}
+export const Tonearm = () => (
+  <>
+    {/* <TonearmPad /> */}
+    <TonearmContainer>
+      {/* <TonearmRod /> */}
+      {/* <Counterweight /> */}
+      {/* <CounterweightDial /> */}
+    </TonearmContainer>
+  </>
+);

@@ -9,13 +9,21 @@ import { Record } from './Record';
 import { StartStopButton } from './StartStopButton';
 import { Tonearm } from './Tonearm';
 
-const StyledTurntable = styled('div')`
-  background-color: #d1d1d6;
-  /* background-image: url('turntable.jpg'); */
-  background-size: cover;
-  height: 648px;
+const TurntableWrapper = styled('div')`
+  opacity: 0.6;
+  max-width: 900px;
   position: relative;
-  width: 838px;
+  padding: 6%;
+  width: 100vw;
+
+  .turntable {
+    background-color: #d1d1d6;
+    background-image: url('turntable.jpg');
+    background-size: cover;
+    padding-bottom: 77.77%;
+    position: relative;
+    width: 100%;
+  }
 `;
 
 export const Turntable = ({ isFlipped }) => {
@@ -24,31 +32,30 @@ export const Turntable = ({ isFlipped }) => {
   const [isHolding, setIsHolding] = useState(false);
   const toggleIsPlaying = useCallback(() => {
     setIsPlaying(playing => !playing);
-  }, [setIsPlaying])
+  }, [setIsPlaying]);
 
   const startHolding = useCallback(() => {
-    setIsHolding(true)
-  }, [])
+    setIsHolding(true);
+  }, []);
 
   const stopHolding = useCallback(() => {
-    setIsHolding(false)
-  }, [])
+    setIsHolding(false);
+  }, []);
 
   return (
-    <StyledTurntable>
-      <StartStopButton onClick={toggleIsPlaying}/>
-      <Platter
-        isHolding={isHolding}
-        isPlaying={isPlaying}
-      >
-        <Record
-          isFlipped={isFlipped}
-          onRelease={stopHolding}
-          onTouch={startHolding}
-        />
-      </Platter>
-      <Tonearm />
-      <PitchAdjustSlider onChange={setPitch} value={pitch} />
-    </StyledTurntable>
+    <TurntableWrapper>
+      <div className="turntable">
+        <StartStopButton isPlaying={isPlaying} onClick={toggleIsPlaying} />
+        <Platter isHolding={isHolding} isPlaying={isPlaying}>
+          <Record
+            isFlipped={isFlipped}
+            onRelease={stopHolding}
+            onTouch={startHolding}
+          />
+        </Platter>
+        <Tonearm />
+        {/* <PitchAdjustSlider onChange={setPitch} value={pitch} /> */}
+      </div>
+    </TurntableWrapper>
   );
-}
+};
