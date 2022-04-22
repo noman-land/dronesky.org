@@ -126,6 +126,8 @@ export const Record = ({ isFlipped, onTouch, onRelease }) => {
       className={classNames('flex-center', flippedClasses)}
       onMouseDown={onTouch}
       onMouseUp={onRelease}
+      onTouchEnd={onRelease}
+      onTouchStart={onTouch}
     >
       <LabelDiv className="flex-center">
         <TopText className={classNames(flippedClasses)}>Drone Sky</TopText>

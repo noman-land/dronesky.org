@@ -3,37 +3,39 @@ import styled from 'styled-components';
 
 const PitchAdjustHole = styled('div')`
   background-color: #d1d1d6;
-  border: solid black 2px;
-  border-radius: 4px;
-  bottom: 78px;
+  border: solid #111 2px;
+  border-radius: 3px;
+  bottom: 12.4%;
   display: flex;
-  height: 224px;
+  height: 34.8%;
   justify-content: center;
+  opacity: 0.7;
   position: absolute;
-  right: 44px;
-  width: 32px;
+  right: 4.9%;
+  width: 4.3%;
 
-  &::before {
-    background: #161617;
-    border-radius: 4px;
-    bottom: 11px;
-    content: ' ';
-    height: 202px;
-    left: 12px;
-    position: absolute;
-    width: 8px;
+  .rc-slider.rc-slider-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
 const handleStyle = {
   background: '#ABABAB',
-  border: 'solid 2px #161617',
-  borderRadius: 3,
+  border: '2px solid #999',
+  borderRadius: 2,
   boxShadow: 'none',
-  height: 30,
-  left: -8,
+  height: '16.5%',
+  left: '-22%',
   opacity: 1,
-  width: 40,
+  width: '216%',
+};
+
+const railStyle = {
+  background: '#161617',
+  display: 'flex',
+  height: '88%',
 };
 
 const displayNone = { display: 'none' };
@@ -43,7 +45,7 @@ export const PitchAdjustSlider = ({ onChange, value }) => (
     <Slider
       handleStyle={handleStyle}
       onChange={onChange}
-      railStyle={displayNone}
+      railStyle={railStyle}
       trackStyle={displayNone}
       value={value}
       vertical={true}

@@ -10,15 +10,16 @@ import { StartStopButton } from './StartStopButton';
 import { Tonearm } from './Tonearm';
 
 const TurntableWrapper = styled('div')`
-  opacity: 0.6;
   max-width: 900px;
-  position: relative;
+  opacity: 0.6;
   padding: 6%;
+  position: relative;
   width: 100vw;
 
   .turntable {
+    border-radius: 2px;
     background-color: #d1d1d6;
-    background-image: url('turntable.jpg');
+    /* background-image: url('turntable.jpg'); */
     background-size: cover;
     padding-bottom: 77.77%;
     position: relative;
@@ -26,10 +27,29 @@ const TurntableWrapper = styled('div')`
   }
 `;
 
+const MIN = 8;
+const MAX = 92;
+
 export const Turntable = ({ isFlipped }) => {
   const [pitch, setPitch] = useState(50);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHolding, setIsHolding] = useState(false);
+
+  const handlePitchChange = useCallback(
+    value => {
+      if (value < MIN) {
+        return setPitch(MIN);
+      }
+
+      if (value > MAX) {
+        return setPitch(MAX);
+      }
+
+      setPitch(value);
+    },
+    [setPitch]
+  );
+
   const toggleIsPlaying = useCallback(() => {
     setIsPlaying(playing => !playing);
   }, [setIsPlaying]);
@@ -54,7 +74,7 @@ export const Turntable = ({ isFlipped }) => {
           />
         </Platter>
         <Tonearm />
-        {/* <PitchAdjustSlider onChange={setPitch} value={pitch} /> */}
+        <PitchAdjustSlider onChange={handlePitchChange} value={pitch} />
       </div>
     </TurntableWrapper>
   );
