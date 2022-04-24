@@ -74,7 +74,7 @@ export const Turntable = ({ isFlipped, isPlaying, onStartStop }) => {
             onTouch={startHolding}
           />
         </Platter>
-        {/* <Tonearm /> */}
+        <Tonearm />
         <PitchAdjustSlider onChange={handlePitchChange} value={pitch} />
       </div>
     </TurntableWrapper>
