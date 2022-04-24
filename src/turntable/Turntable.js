@@ -28,9 +28,8 @@ const TurntableWrapper = styled('div')`
 const MIN = 8;
 const MAX = 92;
 
-export const Turntable = ({ isFlipped }) => {
+export const Turntable = ({ isFlipped, isPlaying, onStartStop }) => {
   const [pitch, setPitch] = useState(50);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [isHolding, setIsHolding] = useState(false);
 
   const handlePitchChange = useCallback(
@@ -48,10 +47,6 @@ export const Turntable = ({ isFlipped }) => {
     [setPitch]
   );
 
-  const toggleIsPlaying = useCallback(() => {
-    setIsPlaying(playing => !playing);
-  }, [setIsPlaying]);
-
   const startHolding = useCallback(() => {
     setIsHolding(true);
   }, []);
@@ -63,7 +58,7 @@ export const Turntable = ({ isFlipped }) => {
   return (
     <TurntableWrapper>
       <div className="turntable">
-        <StartStopButton isPlaying={isPlaying} onClick={toggleIsPlaying} />
+        <StartStopButton isPlaying={isPlaying} onClick={onStartStop} />
         <Platter isHolding={isHolding} isPlaying={isPlaying}>
           <Record
             isFlipped={isFlipped}

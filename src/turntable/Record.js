@@ -1,42 +1,8 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import vectorizeText from 'vectorize-text';
 
-const FLIP_TIME_IN_SECONDS = 1;
-const FLIP_TIME_IN_MS = FLIP_TIME_IN_SECONDS * 1000;
-
-const TheText = ({ text }) => {
-  const polygons = vectorizeText(text, {
-    font: 'Helvetica',
-    fontWeight: 200,
-    polygons: true,
-    position: 'absolute',
-    textBaseline: 'hanging',
-    width: 100,
-  });
-
-  const svg = [
-    '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">',
-  ];
-
-  polygons.forEach(loops => {
-    svg.push('<path d="');
-    loops.forEach(loop => {
-      const start = loop[0];
-      svg.push('M ' + start[0] + ' ' + start[1]);
-      for (let i = 1; i < loop.length; i++) {
-        const p = loop[i];
-        svg.push('L ' + p[0] + ' ' + p[1]);
-      }
-      svg.push('L ' + start[0] + ' ' + start[1]);
-    });
-    svg.push('" fill-rule="even-odd" stroke-width="1" fill="black"></path>');
-  });
-  svg.push('</svg>');
-
-  return <span dangerouslySetInnerHTML={{ __html: svg.join('') }} />;
-};
+import { FLIP_TIME_IN_MS, FLIP_TIME_IN_SECONDS } from './Constants';
 
 const RecordDiv = styled('div')`
   background: #161617;

@@ -1,0 +1,2 @@
+export const FLIP_TIME_IN_SECONDS = 1;
+export const FLIP_TIME_IN_MS = FLIP_TIME_IN_SECONDS * 1000;
