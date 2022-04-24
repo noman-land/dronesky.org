@@ -26,6 +26,21 @@ const PitchAdjustHole = styled('div')`
     flex-direction: column;
     justify-content: center;
 
+    .rc-slider-rail {
+      @media (max-width: 650px) {
+        width: 3.5px;
+      }
+      @media (max-width: 600px) {
+        width: 3.25px;
+      }
+      @media (max-width: 550px) {
+        width: 3px;
+      }
+      @media (max-width: 425px) {
+        width: 2px;
+      }
+    }
+
     @media (max-width: 500px) {
       padding: 0 4px;
       width: 12px;
@@ -33,8 +48,8 @@ const PitchAdjustHole = styled('div')`
     @media (max-width: 425px) {
       width: 11px;
     }
-    @media (max-width: 400px) {
-      padding: 0 3.5px;
+    @media (max-width: 380px) {
+      width: 10px;
     }
     @media (max-width: 350px) {
       padding: 0 3px;
