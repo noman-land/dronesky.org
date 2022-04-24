@@ -27,6 +27,28 @@ const Button = styled('button')`
   .text {
     /* font-size: 300%; */
     position: relative;
+
+    @media (max-width: 700px) {
+      transform: scale(0.9);
+    }
+    @media (max-width: 600px) {
+      transform: scale(0.8);
+    }
+    @media (max-width: 500px) {
+      transform: scale(0.7);
+    }
+    @media (max-width: 450px) {
+      transform: scale(0.65);
+    }
+    @media (max-width: 400px) {
+      transform: scale(0.6);
+    }
+    @media (max-width: 350px) {
+      transform: scale(0.55);
+    }
+    @media (max-width: 300px) {
+      transform: scale(0.5);
+    }
   }
 
   &:active {

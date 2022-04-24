@@ -14,10 +14,34 @@ const PitchAdjustHole = styled('div')`
   right: 4.9%;
   width: 4.3%;
 
+  @media (max-width: 500px) {
+    border-width: 1.5px;
+  }
+  @media (max-width: 425px) {
+    border-width: 1px;
+  }
+
   .rc-slider.rc-slider-vertical {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-width: 500px) {
+      padding: 0 4px;
+      width: 12px;
+    }
+    @media (max-width: 425px) {
+      width: 11px;
+    }
+    @media (max-width: 400px) {
+      padding: 0 3.5px;
+    }
+    @media (max-width: 350px) {
+      padding: 0 3px;
+    }
+    @media (max-width: 300px) {
+      padding: 0 2px;
+    }
   }
 `;
 
