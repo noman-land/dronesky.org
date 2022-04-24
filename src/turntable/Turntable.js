@@ -27,9 +27,13 @@ const TurntableWrapper = styled('div')`
 
 const MIN = 8;
 const MAX = 92;
+const STARTING_PITCH = 50;
+
+const pitchToPercent = pitch =>
+  1 + (pitch - STARTING_PITCH) / (((MAX - MIN) / 2) * 10);
 
 export const Turntable = ({ isFlipped, isPlaying, onStartStop }) => {
-  const [pitch, setPitch] = useState(50);
+  const [pitch, setPitch] = useState(STARTING_PITCH);
   const [isHolding, setIsHolding] = useState(false);
 
   const handlePitchChange = useCallback(
@@ -59,7 +63,11 @@ export const Turntable = ({ isFlipped, isPlaying, onStartStop }) => {
     <TurntableWrapper>
       <div className="turntable">
         <StartStopButton isPlaying={isPlaying} onClick={onStartStop} />
-        <Platter isHolding={isHolding} isPlaying={isPlaying}>
+        <Platter
+          isHolding={isHolding}
+          isPlaying={isPlaying}
+          pitch={pitchToPercent(pitch)}
+        >
           <Record
             isFlipped={isFlipped}
             onRelease={stopHolding}

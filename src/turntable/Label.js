@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { useMemo } from 'react';
 import styled from 'styled-components';
 import { flipAnimation } from './StyleUtils';
 
@@ -17,6 +18,7 @@ const TopText = styled('div')`
   position: absolute;
   text-align: center;
   top: 20%;
+  user-select: none;
 
   ${flipAnimation}
 
@@ -68,6 +70,7 @@ const BottomText = styled('div')`
   font-size: 90%;
   font-weight: 200;
   text-align: center;
+  user-select: none;
 
   ${flipAnimation}
 
@@ -129,10 +132,13 @@ const HoleDiv = styled('div')`
 `;
 
 export const Label = ({ isFlipped, trackNum }) => {
-  const flippedClasses = {
-    flip: isFlipped === true,
-    unflip: isFlipped === false,
-  };
+  const flippedClasses = useMemo(
+    () => ({
+      flip: isFlipped === true,
+      unflip: isFlipped === false,
+    }),
+    [isFlipped]
+  );
 
   return (
     <LabelDiv className="flex-center">

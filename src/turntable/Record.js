@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { FLIP_TIME_IN_MS } from './Constants';
 import { Label } from './Label';
@@ -24,12 +24,17 @@ export const Record = ({ isFlipped, onTouch, onRelease }) => {
     }
   }, [isFlipped]);
 
+  const flippedClasses = useMemo(
+    () => ({
+      flip: isFlipped === true,
+      unflip: isFlipped === false,
+    }),
+    [isFlipped]
+  );
+
   return (
     <RecordDiv
-      className={classNames('flex-center', {
-        flip: isFlipped === true,
-        unflip: isFlipped === false,
-      })}
+      className={classNames('flex-center', flippedClasses)}
       onMouseDown={onTouch}
       onMouseUp={onRelease}
       onTouchEnd={onRelease}
