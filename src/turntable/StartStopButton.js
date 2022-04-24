@@ -1,29 +1,31 @@
 import styled from 'styled-components';
 
 const ButtonHole = styled('div')`
+  opacity: 0.6;
   align-items: center;
   background-color: #161617;
   border-radius: 4px;
-  bottom: 19px;
+  bottom: 3.3%;
   display: flex;
-  height: 64px;
+  height: 9.8%;
   justify-content: center;
-  left: 20px;
+  left: 2.4%;
   position: absolute;
-  width: 80px;
+  width: 9.6%;
 `;
 
 const Button = styled('button')`
+  /* opacity: 0.6; */
   align-items: center;
   background-color: #eee;
   border-radius: 2px;
   display: flex;
-  font-size: 10px;
-  height: 56px;
+  height: 92%;
   justify-content: center;
-  width: 72px;
+  width: 92%;
 
   .text {
+    /* font-size: 300%; */
     position: relative;
   }
 
@@ -35,14 +37,12 @@ const Button = styled('button')`
       margin-left: 2px;
     }
   }
-`
+`;
 
-export const StartStopButton = ({ onClick }) => (
+export const StartStopButton = ({ isPlaying, onClick }) => (
   <ButtonHole>
     <Button onClick={onClick}>
-      <span className="text">
-        Start•Stop
-      </span>
+      <span className="text">{isPlaying ? 'Stop' : 'Start'}</span>
     </Button>
   </ButtonHole>
 );
