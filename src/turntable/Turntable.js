@@ -1,8 +1,6 @@
 import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
-import 'rc-slider/assets/index.css';
-
 import { PitchAdjustSlider } from './PitchAdjustSlider';
 import { Platter } from './Platter';
 import { Record } from './Record';
@@ -11,7 +9,7 @@ import { Tonearm } from './Tonearm';
 
 const TurntableWrapper = styled('div')`
   max-width: 900px;
-  opacity: 0.6;
+  /* opacity: 0.6; */
   padding: 6%;
   position: relative;
   width: 100vw;

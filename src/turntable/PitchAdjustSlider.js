@@ -9,7 +9,7 @@ const PitchAdjustHole = styled('div')`
   display: flex;
   height: 34.8%;
   justify-content: center;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   position: absolute;
   right: 4.9%;
   width: 4.3%;

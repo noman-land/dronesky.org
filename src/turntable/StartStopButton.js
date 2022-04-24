@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ButtonHole = styled('div')`
-  opacity: 0.6;
+  /* opacity: 0.6; */
   align-items: center;
   background-color: #161617;
   border-radius: 4px;
