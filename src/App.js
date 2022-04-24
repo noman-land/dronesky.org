@@ -1,8 +1,8 @@
-import { useCallback, useState } from 'react';
-import styled from 'styled-components';
-
 import 'rc-slider/assets/index.css';
 import './App.css';
+
+import { useCallback, useState } from 'react';
+import styled from 'styled-components';
 
 import { FLIP_TIME_IN_MS } from './turntable/Constants';
 import { Turntable } from './turntable/Turntable';
@@ -25,13 +25,23 @@ const StyledApp = styled('div')`
 
 export const App = () => {
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isFlipping, setIsFlipping] = useState(false);
   const [isFlipped, setIsFlipped] = useState();
 
   const toggleIsFlipped = useCallback(() => {
-    setIsPlaying(false);
+    if (isFlipping === false) {
+      setIsFlipping(true);
+      setIsPlaying(() => {
+        setTimeout(() => {
+          setIsFlipping(false);
+          setIsPlaying(isPlaying);
+        }, FLIP_TIME_IN_MS);
+        return false;
+      });
+    }
+
     setIsFlipped(flipped => !flipped);
-    setTimeout(() => setIsPlaying(true), FLIP_TIME_IN_MS);
-  }, [setIsFlipped]);
+  }, [isFlipping, isPlaying, setIsFlipped]);
 
   const toggleIsPlaying = useCallback(() => {
     setIsPlaying(playing => !playing);
