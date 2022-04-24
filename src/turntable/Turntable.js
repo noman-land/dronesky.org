@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
 import styled from 'styled-components';
+import { useCallback, useState } from 'react';
 
 import { PitchAdjustSlider } from './PitchAdjustSlider';
 import { Platter } from './Platter';

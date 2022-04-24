@@ -1,8 +1,8 @@
 import 'rc-slider/assets/index.css';
 import './App.css';
 
-import { useCallback, useState } from 'react';
 import styled from 'styled-components';
+import { useCallback, useState } from 'react';
 
 import { FLIP_TIME_IN_MS } from './turntable/Constants';
 import { Turntable } from './turntable/Turntable';
