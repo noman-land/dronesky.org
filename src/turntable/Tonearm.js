@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useCallback, useState } from 'react';
 
-const TonearmPad = styled('div')`
+const TonearmPad = styled.div`
   align-items: center;
   border-radius: 50%;
   border: 2px solid #161617;
@@ -25,7 +25,6 @@ const TonearmPad = styled('div')`
 
 const TonearmContainer = styled.div`
   align-items: center;
-  /* border: 1px solid #161617; */
   display: flex;
   flex-direction: column;
   height: 34.75%;
@@ -41,8 +40,7 @@ const TonearmContainer = styled.div`
   right: 17px; */
 `;
 
-const TonearmRod = styled('div')`
-  /* background: silver; */
+const TonearmRod = styled.div`
   background: rgb(215, 215, 215);
   background: linear-gradient(
     90deg,
@@ -59,7 +57,7 @@ const TonearmRod = styled('div')`
   width: 26px;
 `;
 
-const Counterweight = styled('div')`
+const Counterweight = styled.div`
   background: rgb(154, 154, 154);
   background: linear-gradient(
     90deg,
@@ -75,7 +73,7 @@ const Counterweight = styled('div')`
   width: 56px;
 `;
 
-const CounterweightDial = styled('div')`
+const CounterweightDial = styled.div`
   background: linear-gradient(
     90deg,
     rgba(22, 22, 23, 1) 0%,

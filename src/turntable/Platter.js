@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
 
-const PlatterHole = styled('div')`
+const PlatterHole = styled.div`
   align-items: center;
   background-color: #111;
   border-radius: 50%;
@@ -15,7 +15,7 @@ const PlatterHole = styled('div')`
   z-index: 1;
 `;
 
-const PlatterOutside = styled('div')`
+const PlatterOutside = styled.div`
   background-color: #999;
   border-radius: 50%;
   height: 99%;
@@ -35,14 +35,14 @@ const PlatterOutside = styled('div')`
   }
 `;
 
-const PlatterMiddle = styled('div')`
+const PlatterMiddle = styled.div`
   background-color: #444;
   border-radius: 50%;
   height: 98.5%;
   width: 98.5%;
 `;
 
-const PlatterInside = styled('div')`
+const PlatterInside = styled.div`
   background-color: #999;
   border-radius: 50%;
   height: 92%;

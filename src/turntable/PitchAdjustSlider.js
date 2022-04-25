@@ -1,7 +1,7 @@
 import Slider from 'rc-slider';
 import styled from 'styled-components';
 
-const PitchAdjustHole = styled('div')`
+const PitchAdjustHole = styled.div`
   background-color: #d1d1d6;
   border: solid #111 2px;
   border-radius: 3px;

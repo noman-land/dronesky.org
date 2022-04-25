@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ButtonHole = styled('div')`
+const ButtonHole = styled.div`
   /* opacity: 0.6; */
   align-items: center;
   background-color: #161617;
@@ -14,7 +14,7 @@ const ButtonHole = styled('div')`
   width: 9.6%;
 `;
 
-const Button = styled('button')`
+const Button = styled.button`
   /* opacity: 0.6; */
   align-items: center;
   background-color: #eee;

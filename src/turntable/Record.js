@@ -6,7 +6,7 @@ import { FLIP_TIME_IN_MS } from './Constants';
 import { Label } from './Label';
 import { flipAnimation } from './StyleUtils';
 
-const RecordDiv = styled('div')`
+const RecordDiv = styled.div`
   background: #161617;
   border-radius: 50%;
   height: 98%;

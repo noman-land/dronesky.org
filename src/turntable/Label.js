@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import styled from 'styled-components';
 import { flipAnimation } from './StyleUtils';
 
-const LabelDiv = styled('div')`
+const LabelDiv = styled.div`
   background: white;
   border-radius: 50%;
   height: 43%;
@@ -11,7 +11,7 @@ const LabelDiv = styled('div')`
   width: 43%;
 `;
 
-const TopText = styled('div')`
+const TopText = styled.div`
   color: black;
   font-size: 2rem;
   font-weight: 200;
@@ -63,7 +63,7 @@ const TopText = styled('div')`
   }
 `;
 
-const BottomText = styled('div')`
+const BottomText = styled.div`
   position: absolute;
   bottom: 20%;
   color: black;
@@ -124,7 +124,7 @@ const BottomText = styled('div')`
   }
 `;
 
-const HoleDiv = styled('div')`
+const HoleDiv = styled.div`
   background: #282c34;
   border-radius: 50%;
   height: 5%;

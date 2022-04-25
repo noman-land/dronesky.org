@@ -7,13 +7,13 @@ import { useCallback, useState } from 'react';
 import { FLIP_TIME_IN_MS } from './turntable/Constants';
 import { Turntable } from './turntable/Turntable';
 
-const NextButton = styled('button')`
+const NextButton = styled.button`
   margin-bottom: 16px;
   padding: 8px;
   font-size: 20px;
 `;
 
-const StyledApp = styled('div')`
+const StyledApp = styled.div`
   align-items: center;
   background-color: #282c34;
   display: flex;

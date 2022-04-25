@@ -7,7 +7,7 @@ import { Record } from './Record';
 import { StartStopButton } from './StartStopButton';
 import { Tonearm } from './Tonearm';
 
-const TurntableWrapper = styled('div')`
+const TurntableWrapper = styled.div`
   max-width: 900px;
   /* opacity: 0.6; */
   padding: 6%;
