@@ -40,6 +40,6 @@
     ]
   },
   "devDependencies": {
-    "wrangler": "^2.20.1"
+    "wrangler": "^3.13.1"
   }
 }
